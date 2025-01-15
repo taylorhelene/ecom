@@ -22,6 +22,12 @@ export default class App extends Component {
     this.routerRef = React.createRef();
   }
 
+  componentDidMount() {
+  let user = localStorage.getItem("user");
+  user = user ? JSON.parse(user) : null;
+  this.setState({ user });
+  }
+
   render() {
     return (
       <Context.Provider
