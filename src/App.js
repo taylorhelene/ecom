@@ -37,7 +37,7 @@ export default class App extends Component {
     })
   
     if(res.status === 200) {
-      const { email } = jwt_decode(res.data.accessToken)
+      const { email } = jwtDecode(res.data.accessToken)
       const user = {
         email,
         token: res.data.accessToken,
