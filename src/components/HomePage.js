@@ -6,7 +6,7 @@ const Homepage = props => {
   return (
     <div className="home container">
       <div className="hero row">
-        <p className="title">Our Sweet Treats are Handcrafted with Love</p>
+        <p className="title col-sm">Our Sweet Treats are Handcrafted with Love</p>
         <img  className="col-sm hero-img" src={process.env.PUBLIC_URL + '/hero.png'}/>
       </div>
     </div>
