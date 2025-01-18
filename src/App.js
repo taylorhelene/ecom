@@ -10,6 +10,7 @@ import Context from "./Context";
 
 import axios from 'axios';
 import {jwtDecode} from 'jwt-decode';
+import HomePage from "./components/HomePage";
 
 export default class App extends Component {
   constructor(props) {
@@ -141,7 +142,7 @@ export default class App extends Component {
             aria-label="main navigation"
           >
             <div className="navbar-brand">
-              <b className="navbar-item is-size-4 ">ecommerce</b>
+              <img className="navbar-item is-size-4 " src={process.env.PUBLIC_URL + '/logo.png'} alt="logo"/>
               <label
                 role="button"
                 class="navbar-burger burger"
@@ -161,6 +162,9 @@ export default class App extends Component {
               <div className={`navbar-menu ${
                   this.state.showMenu ? "is-active" : ""
                 }`}>
+                <Link to="/" className="navbar-item">
+                  Home
+                </Link>
                 <Link to="/products" className="navbar-item">
                   Products
                 </Link>
@@ -191,7 +195,7 @@ export default class App extends Component {
             </nav>
             
             <Routes>
-              <Route path="/" element={<ProductList />} />
+              <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/add-product" element={<AddProduct />} />
