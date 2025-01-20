@@ -18,7 +18,8 @@ export default class App extends Component {
     this.state = {
       user: null,
       cart: {},
-      products: []
+      products: [],
+      showMenu: false
     };
     this.routerRef = React.createRef();
   }
@@ -137,7 +138,7 @@ export default class App extends Component {
         <Router ref={this.routerRef}>
         <div className="App">
           <nav
-            className="navbar container"
+            className="navbar navbar-expand-lg nav rounded m-2"
             role="navigation"
             aria-label="main navigation"
           >
@@ -162,18 +163,21 @@ export default class App extends Component {
               <div className={`navbar-menu ${
                   this.state.showMenu ? "is-active" : ""
                 }`}>
-                <Link to="/" className="navbar-item">
+                <Link to="/" className="navbar-item m-2">
                   Home
                 </Link>
-                <Link to="/products" className="navbar-item">
+                <Link to="/products" className="navbar-item m-2">
                   Products
                 </Link>
                 {this.state.user && this.state.user.accessLevel < 1 && (
-                  <Link to="/add-product" className="navbar-item">
+                  <Link to="/add-product" className="navbar-item m-2">
                     Add Product
                   </Link>
                 )}
-                <Link to="/cart" className="navbar-item">
+               
+                <a class="navbar-item m-2" href="/products">Disabled</a>
+        
+                <Link to="/cart" className="navbar-item m-2">
                   Cart
                   <span
                     className="tag is-primary"

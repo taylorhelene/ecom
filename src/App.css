@@ -5,6 +5,7 @@
   font-weight: 700;
   font-style: normal;
   color: #333333;
+  font-size: x-large;
 }
 
 .subtitle{
@@ -50,5 +51,9 @@
 }
 
 .hero-img{
-width: 40%;
+  width: 40%;
+}
+
+.nav{
+  background-color: #FFC3A0;
 }
