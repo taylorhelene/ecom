@@ -136,7 +136,7 @@ export default class App extends Component {
         }}
       >
         <Router ref={this.routerRef}>
-        <div className="App">
+        <div className="App p-4">
           <nav
             className="navbar navbar-expand-lg nav rounded m-2"
             role="navigation"

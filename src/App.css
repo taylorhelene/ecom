@@ -5,12 +5,11 @@
   font-weight: 700;
   font-style:normal;
   color: #7B3F00;
-  font-size: x-large;
 }
 
 .subtitle{
   font-family: "Baskervville", serif;
-  font-weight: 500;
+  font-weight: 600;
   font-style: normal;
   color: #333333;
 }
@@ -55,4 +54,7 @@
 
 .nav{
   background-color: #FFC3A0;
+}
+button{
+  background-color: #FF6F61;
 }
