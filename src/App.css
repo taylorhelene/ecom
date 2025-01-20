@@ -3,8 +3,8 @@
 .title{
   font-family: "Baskervville", serif;
   font-weight: 700;
-  font-style: normal;
-  color: #333333;
+  font-style:normal;
+  color: #7B3F00;
   font-size: x-large;
 }
 
@@ -22,7 +22,6 @@
 }
 
 .App {
-  text-align: center;
   background-color: #FFC3A0;
 }
 

@@ -7,11 +7,11 @@ const Homepage = props => {
     <div className="home container">
       <div className="hero row">
         <div className="col-sm">
-          <p className="title ">Our Sweet Treats are Handcrafted with Love</p>
-          <p className="sub-title">Customize Your Cake and Indulge in Flavors. You can get freshly baked 
+          <h1 className="title ">Our Sweet Treats are Handcrafted with Love</h1>
+          <h2 className="subtitle">Customize Your Cake and Indulge in Flavors. You can get freshly baked 
             sweer treats that are moist and warm with flavour fillings. Visit our location to try out the flavours
             first before order
-          </p>
+          </h2>
         </div>
         
         <img  className="col-sm hero-img" src={process.env.PUBLIC_URL + '/hero.png'}/>
