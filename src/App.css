@@ -2,14 +2,14 @@
 
 .title{
   font-family: "Baskervville", serif;
-  font-weight: 700;
+  font-weight: 800;
   font-style:normal;
   color: #7B3F00;
 }
 
 .subtitle{
   font-family: "Baskervville", serif;
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
   color: #333333;
 }
@@ -49,7 +49,7 @@
 }
 
 .hero-img{
-  width: 30%;
+  height: 40vh;
 }
 
 .nav{
@@ -57,4 +57,6 @@
 }
 button{
   background-color: #FF6F61;
+  color: #FF6F61;
+  font-family: "Poppins", serif;
 }

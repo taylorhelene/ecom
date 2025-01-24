@@ -12,7 +12,7 @@ const Homepage = props => {
             sweer treats that are moist and warm with flavour fillings. Visit our location to try out the flavours
             first before order
           </h3>
-          <button className="button">View our products</button>
+          <button className="button btn rounded-pill" type="button">View our products</button>
         </div>
         
         <img  className="col-sm hero-img" src={process.env.PUBLIC_URL + '/hero.png'}/>
