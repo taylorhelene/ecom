@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route, Link, BrowserRouter as Router, NavLink } from "react-router-dom";
 
 import AddProduct from './components/AddProduct';
 import Cart from './components/Cart';
@@ -163,38 +163,90 @@ export default class App extends Component {
               <div className={`navbar-menu ${
                   this.state.showMenu ? "is-active" : ""
                 }`}>
-                <Link to="/" className="navbar-item m-2">
-                  Home
-                </Link>
-                <Link to="/products" className="navbar-item m-2">
-                  Products
-                </Link>
-                {this.state.user && this.state.user.accessLevel < 1 && (
-                  <Link to="/add-product" className="navbar-item m-2">
-                    Add Product
-                  </Link>
-                )}
-               
-                <a class="navbar-item m-2" href="/products">Disabled</a>
-        
-                <Link to="/cart" className="navbar-item m-2">
-                  Cart
-                  <span
-                    className="tag is-primary"
-                    style={{ marginLeft: "5px" }}
-                  >
-                    { Object.keys(this.state.cart).length }
-                  </span>
-                </Link>
-                {!this.state.user ? (
-                  <Link to="/login" className="navbar-item">
-                    Login
-                  </Link>
-                ) : (
-                  <Link to="/" onClick={this.logout} className="navbar-item">
-                    Logout
-                  </Link>
-                )}
+                <ul className="nav nav-pills">
+                  <li className="nav-item">
+                    <NavLink
+                      to="/"
+                      className={({ isActive }) =>
+                        `nav-link ${isActive ? 'active' : ''}`
+                      }
+                    >
+                      Home
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      to="/products"
+                      className={({ isActive }) =>
+                        `nav-link ${isActive ? 'active' : ''}`
+                      }
+                    >
+                      Products
+                    </NavLink>
+                  </li>
+                  {this.state.user && this.state.user.accessLevel < 1 && (
+                    <li className="nav-item">
+                      <NavLink
+                        to="/add-product"
+                        className={({ isActive }) =>
+                          `nav-link ${isActive ? 'active' : ''}`
+                        }
+                      >
+                        Add Product
+                      </NavLink>
+                    </li>
+                  )}
+                  <li className="nav-item">
+                    <a
+                      className="nav-link disabled"
+                      href="/products"
+                      tabIndex="-1"
+                      aria-disabled="true"
+                    >
+                      Disabled
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      to="/cart"
+                      className={({ isActive }) =>
+                        `nav-link ${isActive ? 'active' : ''}`
+                      }
+                    >
+                      Cart
+                      <span
+                        className="tag is-primary"
+                        style={{ marginLeft: '5px' }}
+                      >
+                        {Object.keys(this.state.cart).length}
+                      </span>
+                    </NavLink>
+                  </li>
+                  {!this.state.user ? (
+                    <li className="nav-item">
+                      <NavLink
+                        to="/login"
+                        className={({ isActive }) =>
+                          `nav-link ${isActive ? 'active' : ''}`
+                        }
+                      >
+                        Login
+                      </NavLink>
+                    </li>
+                  ) : (
+                    <li className="nav-item">
+                      <NavLink
+                        to="/"
+                        onClick={this.logout}
+                        className={({ isActive }) =>
+                          `nav-link ${isActive ? 'active' : ''}`
+                        }
+                      >
+                        Logout
+                      </NavLink>
+                    </li>
+                  )}
+                </ul>
               </div>
             </nav>
             
