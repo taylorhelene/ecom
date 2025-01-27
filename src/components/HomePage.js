@@ -13,9 +13,11 @@ const Homepage = props => {
             first before order
           </h3>
           <button className="button btn rounded-pill" type="button">View our products</button>
-        </div>
+        </div>   
+        <img  className="col-sm hero-img object-fit-contain" src={process.env.PUBLIC_URL + '/hero.png'}/>
+      </div>
+      <div>
         
-        <img  className="col-sm hero-img contain" src={process.env.PUBLIC_URL + '/hero.png'}/>
       </div>
     </div>
   );
