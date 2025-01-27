@@ -45,11 +45,12 @@
 }
 
 .hero{
-  height: 99%;
+  height: 98vh;
 }
 
 .hero-img{
   height: 40vh;
+  
 }
 
 .nav{

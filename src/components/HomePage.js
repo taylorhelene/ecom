@@ -15,7 +15,7 @@ const Homepage = props => {
           <button className="button btn rounded-pill" type="button">View our products</button>
         </div>
         
-        <img  className="col-sm hero-img" src={process.env.PUBLIC_URL + '/hero.png'}/>
+        <img  className="col-sm hero-img contain" src={process.env.PUBLIC_URL + '/hero.png'}/>
       </div>
     </div>
   );
