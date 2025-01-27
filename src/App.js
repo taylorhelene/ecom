@@ -223,7 +223,7 @@ export default class App extends Component {
                     </NavLink>
                   </li>
                   {!this.state.user ? (
-                    <li className="nav-item">
+                    <li className="nav-item d-flex">
                       <NavLink
                         to="/login"
                         className={({ isActive }) =>
@@ -234,7 +234,7 @@ export default class App extends Component {
                       </NavLink>
                     </li>
                   ) : (
-                    <li className="nav-item">
+                    <li className="nav-item d-flex">
                       <NavLink
                         to="/"
                         onClick={this.logout}

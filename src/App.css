@@ -49,13 +49,14 @@
 }
 .about{
   height: 60vh;
+  background-color: #FFF4E0;
 }
 .hero-img{
-  height: 40vh;
+  height: 60vh;
   
 }
 .about-img{
-  height: 40%;
+  height: 60%;
 
 }
 
