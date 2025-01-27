@@ -9,9 +9,9 @@
 
 .subtitle{
   font-family: "Baskervville", serif;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
-  color: #333333;
+  color: #7B3F00;
 }
 .body-text {
   font-family: "Poppins", serif;
@@ -47,7 +47,9 @@
 .hero{
   height: 98vh;
 }
-
+.about{
+  height: 60vh;
+}
 .hero-img{
   height: 40vh;
   
