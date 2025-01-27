@@ -7,8 +7,8 @@ const Homepage = props => {
   
   return (
     <div className="home p-2">
-      <div className="hero row">
-        <div className="col-sm">
+      <div className="hero row ">
+        <div className="col-sm-7">
           <h1 className="title ">Our Sweet Treats are Handcrafted with Love</h1>
           <h3 className="body-text">Customize Your Cake and Indulge in Flavors. You can get freshly baked 
             sweer treats that are moist and warm with flavour fillings. Visit our location to try out the flavours
@@ -16,23 +16,24 @@ const Homepage = props => {
           </h3>
           <button className="button rounded-pill" type="button">View our products</button>
         </div>   
-        <img  className="col-sm hero-img object-fit-contain" src={process.env.PUBLIC_URL + '/hero.png'}/>
+        <img  className="col-sm-5 hero-img " src={process.env.PUBLIC_URL + '/hero.png'}/>
       </div>
       <div className="row about">
+        <DotLottieReact
+          src="https://lottie.host/2a881668-7aa8-4bfe-a235-f68888a2bceb/dGmyFGxjSL.lottie"
+          loop
+          autoplay
+          className="col-sm-4 about-img object-fit-contain"
+        />
         <div    className="col-sm" >
-          <h1 className="sub-title">Our Services</h1>
+          <h2 className="subtitle">Our Services</h2>
           <p  className="body-text">There are many variations of passages of Lorem Ipsum available, 
             but the majority have sufferedThere are many variations of passages of Lorem Ipsum available, but 
             the majority have sufferedThere are many variations of passages of Lorem Ipsum available, but the
              majority have suffered</p>
         </div>
        
-        <DotLottieReact
-        src="https://lottie.host/2a881668-7aa8-4bfe-a235-f68888a2bceb/dGmyFGxjSL.lottie"
-        loop
-        autoplay
-        className="col-sm about-img object-fit-contain"
-      />
+        
       </div>
     </div>
   );

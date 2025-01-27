@@ -138,7 +138,7 @@ export default class App extends Component {
         <Router ref={this.routerRef}>
         <div className="App p-4">
           <nav
-            className="navbar navbar-expand-lg nav rounded m-2"
+            className="navbar navbar-expand-lg container rounded m-2"
             role="navigation"
             aria-label="main navigation"
           >
@@ -163,7 +163,7 @@ export default class App extends Component {
               <div className={`navbar-menu ${
                   this.state.showMenu ? "is-active" : ""
                 }`}>
-                <ul className="nav nav-pills mx-auto ">
+                <ul className="nav nav-pills navbar-item ">
                   <li className="nav-item">
                     <NavLink
                       to="/"
@@ -215,19 +215,22 @@ export default class App extends Component {
                     </NavLink>
                   </li>
                 </ul>
-                  {!this.state.user ? (
-                    <button className="nav-item float-end">
+                  
+              </div>
+
+              {!this.state.user ? (
+                    <button className="navbar-right d-fex flex navbar-item float-end rounded-pill">
                       <NavLink
                         to="/login"
                         className={({ isActive }) =>
                           `nav-link ${isActive ? 'active' : ''}`
                         }
                       >
-                        Login
+                        Log in
                       </NavLink>
                     </button>
                   ) : (
-                    <button className="nav-item ">
+                    <button className="navbar-item ">
                       <NavLink
                         to="/"
                         onClick={this.logout}
@@ -235,12 +238,11 @@ export default class App extends Component {
                           `nav-link ${isActive ? 'active' : ''}`
                         }
                       >
-                        Logout
+                        Log out
                       </NavLink>
                     </button>
                   )}
                 
-              </div>
             </nav>
             
             <Routes>
