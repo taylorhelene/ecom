@@ -18,14 +18,17 @@ const Homepage = props => {
         </div>   
         <img  className="col-sm hero-img object-fit-contain" src={process.env.PUBLIC_URL + '/hero.png'}/>
       </div>
-      <div className="row">
-        <h1 className="sub-title ">Our Services</h1>
+      <div className="row about">
+        <div    className="col-sm" >
+          <h1 className="sub-title">Our Services</h1>
 
+        </div>
+       
         <DotLottieReact
         src="https://lottie.host/2a881668-7aa8-4bfe-a235-f68888a2bceb/dGmyFGxjSL.lottie"
         loop
         autoplay
-        className="col-sm"
+        className="col-sm about-img object-fit-contain"
       />
       </div>
     </div>
