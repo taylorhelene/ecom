@@ -21,7 +21,10 @@ const Homepage = props => {
       <div className="row about">
         <div    className="col-sm" >
           <h1 className="sub-title">Our Services</h1>
-
+          <p  className="body-text">There are many variations of passages of Lorem Ipsum available, 
+            but the majority have sufferedThere are many variations of passages of Lorem Ipsum available, but 
+            the majority have sufferedThere are many variations of passages of Lorem Ipsum available, but the
+             majority have suffered</p>
         </div>
        
         <DotLottieReact
