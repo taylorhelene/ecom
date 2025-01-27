@@ -163,7 +163,7 @@ export default class App extends Component {
               <div className={`navbar-menu ${
                   this.state.showMenu ? "is-active" : ""
                 }`}>
-                <ul className="nav nav-pills">
+                <ul className="nav nav-pills mx-auto ">
                   <li className="nav-item">
                     <NavLink
                       to="/"
@@ -196,16 +196,8 @@ export default class App extends Component {
                       </NavLink>
                     </li>
                   )}
-                  <li className="nav-item">
-                    <a
-                      className="nav-link disabled"
-                      href="/products"
-                      tabIndex="-1"
-                      aria-disabled="true"
-                    >
-                      Disabled
-                    </a>
-                  </li>
+                  
+                  
                   <li className="nav-item">
                     <NavLink
                       to="/cart"
@@ -224,7 +216,7 @@ export default class App extends Component {
                   </li>
                 </ul>
                   {!this.state.user ? (
-                    <button className="nav-item ">
+                    <button className="nav-item float-end">
                       <NavLink
                         to="/login"
                         className={({ isActive }) =>
