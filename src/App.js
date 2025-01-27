@@ -222,8 +222,9 @@ export default class App extends Component {
                       </span>
                     </NavLink>
                   </li>
+                </ul>
                   {!this.state.user ? (
-                    <li className="nav-item d-flex">
+                    <button className="nav-item ">
                       <NavLink
                         to="/login"
                         className={({ isActive }) =>
@@ -232,9 +233,9 @@ export default class App extends Component {
                       >
                         Login
                       </NavLink>
-                    </li>
+                    </button>
                   ) : (
-                    <li className="nav-item d-flex">
+                    <button className="nav-item ">
                       <NavLink
                         to="/"
                         onClick={this.logout}
@@ -244,9 +245,9 @@ export default class App extends Component {
                       >
                         Logout
                       </NavLink>
-                    </li>
+                    </button>
                   )}
-                </ul>
+                
               </div>
             </nav>
             
