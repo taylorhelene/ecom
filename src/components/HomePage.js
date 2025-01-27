@@ -1,5 +1,7 @@
 import React from "react";
 import withContext from "../withContext";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 const Homepage = props => {
   
@@ -16,8 +18,13 @@ const Homepage = props => {
         </div>   
         <img  className="col-sm hero-img object-fit-contain" src={process.env.PUBLIC_URL + '/hero.png'}/>
       </div>
-      <div>
-        
+      <div className="row">
+        <DotLottieReact
+        src="https://lottie.host/2a881668-7aa8-4bfe-a235-f68888a2bceb/dGmyFGxjSL.lottie"
+        loop
+        autoplay
+        className="col-sm"
+      />
       </div>
     </div>
   );
