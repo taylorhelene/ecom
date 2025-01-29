@@ -136,9 +136,9 @@ export default class App extends Component {
         }}
       >
         <Router ref={this.routerRef}>
-        <div className="App p-4">
+        <div className="App p-2">
           <nav
-            className="navbar navbar-expand-lg container rounded m-2"
+            className="navbar  navbar-expand-lg position-relative container-fluid rounded p-2 my-2"
             role="navigation"
             aria-label="main navigation"
           >
@@ -160,7 +160,7 @@ export default class App extends Component {
                 <span aria-hidden="true"></span>
               </label>
             </div>
-              <div className={`navbar-menu ${
+              <div className={`navbar-menu  ${
                   this.state.showMenu ? "is-active" : ""
                 }`}>
                 <ul className="nav nav-pills navbar-item ">
@@ -219,7 +219,7 @@ export default class App extends Component {
               </div>
 
               {!this.state.user ? (
-                    <button className=" d-flex justify-content-end navbar-item float-end rounded-pill">
+                    <button className="position-absolute top-0 end-0 d-flex navbar-item rounded-pill">
                       <NavLink
                         to="/login"
                         className={({ isActive }) =>
