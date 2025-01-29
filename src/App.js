@@ -219,7 +219,7 @@ export default class App extends Component {
               </div>
 
               {!this.state.user ? (
-                    <button className="d-flex justify-content-end navbar-item float-end rounded-pill">
+                    <button className=" d-flex justify-content-end navbar-item float-end rounded-pill">
                       <NavLink
                         to="/login"
                         className={({ isActive }) =>
