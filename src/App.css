@@ -46,6 +46,7 @@
 
 .hero{
   height: 98vh;
+  max-height: 98%;
 }
 .about{
   height: 70vh;
