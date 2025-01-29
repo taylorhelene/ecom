@@ -160,7 +160,7 @@ export default class App extends Component {
                 <span aria-hidden="true"></span>
               </label>
             </div>
-              <div className={`navbar-menu  ${
+              <div className={`navbar-menu position-absolute top-00 start-50 ${
                   this.state.showMenu ? "is-active" : ""
                 }`}>
                 <ul className="nav nav-pills navbar-item ">
@@ -230,7 +230,7 @@ export default class App extends Component {
                       </NavLink>
                     </button>
                   ) : (
-                    <button className="navbar-item ">
+                    <button className="position-absolute top-0 end-0 d-flex navbar-item rounded-pill">
                       <NavLink
                         to="/"
                         onClick={this.logout}
