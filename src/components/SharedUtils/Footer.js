@@ -20,6 +20,8 @@ const Footer = props => {
                     <h5 className="subtitle">About</h5>
                 </div>
             </div>
+
+            <p>© 2025 All Rights Reserved.</p>
         </div>
     )
 }

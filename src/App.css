@@ -20,6 +20,13 @@
   color: #333333;
 }
 
+p{
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #333333;
+}
+
 .App {
   background-color: #FFC3A0;
 }
