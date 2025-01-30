@@ -7,7 +7,7 @@ const Homepage = props => {
   
   return (
     <div className="home p-2">
-      <div className="hero row d-flex align-items-center ">
+      <div className="hero row d-flex align-items-center text-wrap ">
         <div className="col-sm-6 ">
           <h1 className="title ">Our Sweet Treats are Handcrafted with Love</h1>
           <h3 className="body-text">Customize Your Cake and Indulge in Flavors. You can get freshly baked 
@@ -25,12 +25,14 @@ const Homepage = props => {
           autoplay
           className="col-sm-4 about-img object-fit-contain"
         />
-        <div    className="col-sm" >
+        <div    className="col-sm " >
           <h2 className="subtitle">Our Services</h2>
           <p  className="body-text">There are many variations of passages of Lorem Ipsum available, 
             but the majority have sufferedThere are many variations of passages of Lorem Ipsum available, but 
             the majority have sufferedThere are many variations of passages of Lorem Ipsum available, but the
              majority have suffered</p>
+
+          <button className="button rounded-pill" type="button">Read More</button>
         </div>
        
         

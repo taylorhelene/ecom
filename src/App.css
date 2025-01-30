@@ -52,7 +52,7 @@
   background-color: #FFF4E0;
 }
 .hero-img{
-  object-fit:scale-down;
+  object-fit: contain;
   
 }
 .about-img{
