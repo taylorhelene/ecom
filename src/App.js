@@ -138,7 +138,7 @@ export default class App extends Component {
         <Router ref={this.routerRef}>
         <div className="App p-2">
           <nav
-            className="navbar  navbar-expand-lg position-relative container-fluid rounded p-2 my-2"
+            className="navbar navbar-expand-lg position-relative container-fluid rounded p-2 m-2"
             role="navigation"
             aria-label="main navigation"
           >
@@ -160,11 +160,11 @@ export default class App extends Component {
                 <span aria-hidden="true"></span>
               </label>
             </div>
-              <div className={`navbar-menu position-absolute top-00 start-50 ${
+              <div className={`navbar-menu container-fluid d-flex justify-content-center ${
                   this.state.showMenu ? "is-active" : ""
                 }`}>
                 <ul className="nav nav-pills navbar-item ">
-                  <li className="nav-item">
+                  <li className="nav-item m-2">
                     <NavLink
                       to="/"
                       className={({ isActive }) =>
@@ -174,7 +174,7 @@ export default class App extends Component {
                       Home
                     </NavLink>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item m-2" >
                     <NavLink
                       to="/products"
                       className={({ isActive }) =>
@@ -185,7 +185,7 @@ export default class App extends Component {
                     </NavLink>
                   </li>
                   {this.state.user && this.state.user.accessLevel < 1 && (
-                    <li className="nav-item">
+                    <li className="nav-item m-2">
                       <NavLink
                         to="/add-product"
                         className={({ isActive }) =>
@@ -198,7 +198,7 @@ export default class App extends Component {
                   )}
                   
                   
-                  <li className="nav-item">
+                  <li className="nav-item m-2">
                     <NavLink
                       to="/cart"
                       className={({ isActive }) =>
