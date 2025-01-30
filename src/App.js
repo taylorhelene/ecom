@@ -11,6 +11,7 @@ import Context from "./Context";
 import axios from 'axios';
 import {jwtDecode} from 'jwt-decode';
 import HomePage from "./components/HomePage";
+import Footer from "./components/SharedUtils/Footer";
 
 export default class App extends Component {
   constructor(props) {
@@ -254,6 +255,7 @@ export default class App extends Component {
             </Routes>
           </div>
         </Router>
+        <Footer/>
       </Context.Provider>
     );
   }
