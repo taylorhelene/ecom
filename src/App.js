@@ -144,7 +144,7 @@ export default class App extends Component {
             aria-label="main navigation"
           >
             <div className="navbar-brand">
-              <img className="navbar-item is-size-4 object-fit-contain " src={process.env.PUBLIC_URL + '/logo.png'} alt="logo"/>
+              <img className="navbar-item is-size-4 object-fit-contain App-logo " src={process.env.PUBLIC_URL + '/logo.png'} alt="logo"/>
               <label
                 role="button"
                 class="navbar-burger burger"
