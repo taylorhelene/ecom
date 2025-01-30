@@ -7,8 +7,8 @@ const Homepage = props => {
   
   return (
     <div className="home p-2">
-      <div className="hero row position-relative ">
-        <div className="col-sm-6 position-absolute top-50 start-0">
+      <div className="hero row d-flex align-items-center ">
+        <div className="col-sm-6 ">
           <h1 className="title ">Our Sweet Treats are Handcrafted with Love</h1>
           <h3 className="body-text">Customize Your Cake and Indulge in Flavors. You can get freshly baked 
             sweer treats that are moist and warm with flavour fillings. Visit our location to try out the flavours
@@ -16,7 +16,7 @@ const Homepage = props => {
           </h3>
           <button className="button rounded-pill" type="button">View our products</button>
         </div>   
-        <img  className="col-sm-5 hero-img  position-absolute top-50 start-50" src={process.env.PUBLIC_URL + '/hero.png'}/>
+        <img  className="col-sm-5 hero-img " src={process.env.PUBLIC_URL + '/hero.png'}/>
       </div>
       <div className="row about">
         <DotLottieReact
