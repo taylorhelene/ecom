@@ -215,6 +215,17 @@ export default class App extends Component {
                       </span>
                     </NavLink>
                   </li>
+
+                  <li className="nav-item m-2">
+                    <NavLink
+                      to="/"
+                      className={({ isActive }) =>
+                        `nav-link ${isActive ? 'active' : ''}`
+                      }
+                    >
+                      Contact Us
+                    </NavLink>
+                  </li>
                 </ul>
                   
               </div>

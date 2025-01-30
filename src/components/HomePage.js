@@ -10,10 +10,10 @@ const Homepage = props => {
       <div className="hero row d-flex align-items-center text-wrap ">
         <div className="col-sm-6 ">
           <h1 className="title ">Our Sweet Treats are Handcrafted with Love</h1>
-          <h3 className="body-text">Customize Your Cake and Indulge in Flavors. You can get freshly baked 
+          <h4 className="subtitle">Customize Your Cake and Indulge in Flavors. You can get freshly baked 
             sweer treats that are moist and warm with flavour fillings. Visit our location to try out the flavours
             first before order
-          </h3>
+          </h4>
           <button className="button rounded-pill" type="button">View our products</button>
         </div>   
         <img  className="col-sm-5 hero-img " src={process.env.PUBLIC_URL + '/hero.png'}/>
