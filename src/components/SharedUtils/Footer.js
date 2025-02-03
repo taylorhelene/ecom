@@ -19,10 +19,14 @@ const Footer = props => {
                     </div>
                 </div>
                 <div className="col-sm">
-                    <h5 className="subtitle">Addrress</h5>
+                    <h5 className="subtitle">Address</h5>
                 </div>
                 <div className="col-sm">
                     <h5 className="subtitle">Links</h5>
+                    <p>Home</>
+                    <p>Products</>
+                    <p>Cart<P/>
+                    <p>Contact Us</>
                 </div>
                 <div className="col-sm">
                     <h5 className="subtitle">About</h5>
