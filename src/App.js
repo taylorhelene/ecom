@@ -11,6 +11,7 @@ import Context from "./Context";
 import axios from 'axios';
 import {jwtDecode} from 'jwt-decode';
 import HomePage from "./components/HomePage";
+import HomePage from "./components/ContactUs";
 import Footer from "./components/SharedUtils/Footer";
 
 export default class App extends Component {
@@ -218,7 +219,7 @@ export default class App extends Component {
 
                   <li className="nav-item m-2">
                     <NavLink
-                      to="/"
+                      to="/contact"
                       className={({ isActive }) =>
                         `nav-link ${isActive ? 'active' : ''}`
                       }
@@ -263,7 +264,7 @@ export default class App extends Component {
               <Route path="/cart" element={<Cart />} />
               <Route path="/add-product" element={<AddProduct />} />
               <Route path="/products" element={<ProductList />} />
-              <Route path="/contact" element={<ProductList />} />
+              <Route path="/contact" element={<ContactUs />} />
             </Routes>
           </div>
         </Router>
