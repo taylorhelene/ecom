@@ -20,13 +20,17 @@ const Footer = props => {
                 </div>
                 <div className="col-sm">
                     <h5 className="subtitle">Address</h5>
+                    <p>Eldoret , Kiambu</p>
+                    <p>Phone Number: 07000000</p>
+                    <p>Contact Us</p>
+
                 </div>
                 <div className="col-sm">
                     <h5 className="subtitle">Links</h5>
-                    <p>Home</>
-                    <p>Products</>
-                    <p>Cart<P/>
-                    <p>Contact Us</>
+                    <p>Home</p>
+                    <p>Products</p>
+                    <p>Cart</p>
+                    <p>Contact Us</p>
                 </div>
                 <div className="col-sm">
                     <h5 className="subtitle">About</h5>
