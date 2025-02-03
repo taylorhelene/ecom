@@ -7,7 +7,7 @@ const Footer = props => {
     return(
         <div className="container-fluid App">
              <div className="row">
-                <div className="col-sm">
+                <div className="col-sm-2">
                     <h5 className="subtitle">About</h5>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width='25' height="25" fill='#FF6F61' className="bi bi-facebook col-sm m-1" viewBox="0 0 16 16">
@@ -18,21 +18,21 @@ const Footer = props => {
                         </svg>
                     </div>
                 </div>
-                <div className="col-sm">
+                <div className="col-sm-2">
                     <h5 className="subtitle">Address</h5>
                     <p>Eldoret , Kiambu</p>
                     <p>Phone Number: 07000000</p>
                     <p>Contact Us</p>
 
                 </div>
-                <div className="col-sm">
+                <div className="col-sm-2">
                     <h5 className="subtitle">Links</h5>
                     <p>Home</p>
                     <p>Products</p>
                     <p>Cart</p>
                     <p>Contact Us</p>
                 </div>
-                <div className="col-sm">
+                <div className="col-sm-2">
                     <h5 className="subtitle">About</h5>
                 </div>
             </div>
