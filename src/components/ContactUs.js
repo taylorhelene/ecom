@@ -6,7 +6,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 const ContactUs = props => {
     return(
         <div>
-            <form action="contact.php" method="post" className="" data-aos="fade-up" data-aos-delay="600">
+            <form  method="post" className="" data-aos="fade-up" data-aos-delay="600">
                 <div className="row gy-4">
                     <div className="col-md-6">
                         <input type="text" name="name" className="form-control" placeholder="Your Name" required=""/>
