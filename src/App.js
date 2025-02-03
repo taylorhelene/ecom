@@ -263,6 +263,7 @@ export default class App extends Component {
               <Route path="/cart" element={<Cart />} />
               <Route path="/add-product" element={<AddProduct />} />
               <Route path="/products" element={<ProductList />} />
+              <Route path="/contact" element={<ProductList />} />
             </Routes>
           </div>
         </Router>
