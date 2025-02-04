@@ -6,6 +6,11 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 const ContactUs = props => {
     return(
         <div>
+            <div className="container-fluid">
+                <div className="d-flex justify-content-center container">
+                    <h4 className="title">Contact Us</h4>
+                </div>
+            </div>
             <form  method="post" className="" data-aos="fade-up" data-aos-delay="600">
                 <div className="row gy-4">
                     <div className="col-md-6">

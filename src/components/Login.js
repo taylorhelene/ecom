@@ -39,7 +39,7 @@ class Login extends Component {
         </div>
         <br />
         <br />
-        <form onSubmit={this.login}>
+        <form onSubmit={this.login} className='d-flex justify-content-center container p-3'>
           <div className="columns is-mobile is-centered">
             <div className="column is-one-third">
               <div className="field">
