@@ -55,9 +55,9 @@ class Login extends Component {
               onChange={this.handleChange}
               required=""/>
               {this.state.error && (
-                <div className="has-text-danger">{this.state.error}</div>
+                <div className="text-danger">{this.state.error}</div>
               )}
-              <div className="field is-clearfix" align='center'>
+              <div  align='center'>
                 <button
                   className="rounded-pill"
                 >
