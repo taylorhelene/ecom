@@ -7,7 +7,7 @@ const ProductList = props => {
 
   return (
     <div className="container-fluid">
-        <div className="hero-body container">
+        <div className="d-flex justify-content-center container">
           <h4 className="title">Our Products</h4>
         </div>
       <br />
