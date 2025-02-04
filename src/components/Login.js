@@ -37,22 +37,19 @@ class Login extends Component {
             <h4 className="title">Login</h4>
           </div>
         </div>
-        <form onSubmit={this.login} className='d-flex justify-content-center container p-3 data-aos="fade-up" data-aos-delay="600"'>
+        <form onSubmit={this.login} className='d-flex justify-content-center container p-3 ' >
           <div className="row gy-4 d-flex justify-content-center ">
-            <label className="label">Email: </label>
 
             <input 
-              className="col-md-6 input"
+              className="form-control input"
               type="email" 
               name="username" 
-              className="input" 
               placeholder="Your Name"                   
               onChange={this.handleChange}
               required=""/>
                 
-            <label className="label">Password: </label>
             <input
-              className="col-md-6 input"
+              className=" form-control input"
               type="password"
               name="password"
               onChange={this.handleChange}
@@ -60,7 +57,7 @@ class Login extends Component {
               {this.state.error && (
                 <div className="has-text-danger">{this.state.error}</div>
               )}
-              <div className="field is-clearfix">
+              <div className="field is-clearfix" align='center'>
                 <button
                   className="rounded-pill"
                 >
