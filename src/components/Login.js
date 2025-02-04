@@ -42,7 +42,7 @@ class Login extends Component {
               className="form-control input"
               type="email" 
               name="username" 
-              placeholder="Your Name"                   
+              placeholder="Your email"                   
               onChange={this.handleChange}
               required=""/>
                 

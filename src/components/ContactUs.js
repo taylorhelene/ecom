@@ -5,13 +5,13 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const ContactUs = props => {
     return(
-        <div>
-            <div className="container-fluid">
+        <div className="container-fluid">
+            
                 <div className="d-flex justify-content-center container">
                     <h4 className="title">Contact Us</h4>
                 </div>
-            </div>
-            <form  method="post" className="" data-aos="fade-up" data-aos-delay="600">
+          
+            <form  method="post" className="d-flex justify-content-center p-4 m-4" data-aos="fade-up" data-aos-delay="600">
                 <div className="row gy-4">
                     <div className="col-md-6">
                         <input type="text" name="name" className="form-control" placeholder="Your Name" required=""/>
@@ -30,8 +30,9 @@ const ContactUs = props => {
                     <div className="loading">Loading</div>
                     <div className="error-message"></div>
                     <div className="sent-message">Your message has been sent. Thank you!</div>
-
-                    <button type="submit">Send Message</button>
+                    <div  align='center'>
+                        <button className="rounded-pill"  type="submit">Send Message</button>  
+                    </div>
 
                 </div>
             </form>
