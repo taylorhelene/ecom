@@ -37,41 +37,37 @@ class Login extends Component {
             <h4 className="title">Login</h4>
           </div>
         </div>
-        <br />
-        <br />
-        <form onSubmit={this.login} className='d-flex justify-content-center container p-3'>
-          <div className="columns is-mobile is-centered">
-            <div className="column is-one-third">
-              <div className="field">
-                <label className="label">Email: </label>
-                <input
-                  className="input"
-                  type="email"
-                  name="username"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="field">
-                <label className="label">Password: </label>
-                <input
-                  className="input"
-                  type="password"
-                  name="password"
-                  onChange={this.handleChange}
-                />
-              </div>
+        <form onSubmit={this.login} className='d-flex justify-content-center container p-3 data-aos="fade-up" data-aos-delay="600"'>
+          <div className="row gy-4 d-flex justify-content-center ">
+            <label className="label">Email: </label>
+
+            <input 
+              className="col-md-6 input"
+              type="email" 
+              name="username" 
+              className="input" 
+              placeholder="Your Name"                   
+              onChange={this.handleChange}
+              required=""/>
+                
+            <label className="label">Password: </label>
+            <input
+              className="col-md-6 input"
+              type="password"
+              name="password"
+              onChange={this.handleChange}
+              required=""/>
               {this.state.error && (
                 <div className="has-text-danger">{this.state.error}</div>
               )}
               <div className="field is-clearfix">
                 <button
-                  className="button is-primary is-outlined is-pulled-right"
+                  className="rounded-pill"
                 >
                   Submit
                 </button>
               </div>
-            </div>
-          </div>
+              </div>
         </form>
       </>
     ) : (
