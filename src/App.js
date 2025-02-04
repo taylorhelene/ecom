@@ -11,7 +11,7 @@ import Context from "./Context";
 import axios from 'axios';
 import {jwtDecode} from 'jwt-decode';
 import HomePage from "./components/HomePage";
-import HomePage from "./components/ContactUs";
+import ContactUs from "./components/ContactUs";
 import Footer from "./components/SharedUtils/Footer";
 
 export default class App extends Component {
