@@ -31,12 +31,10 @@ class Login extends Component {
 
   render() {
     return !this.props.context.user ? (
-      <>
-        <div className="container-fluid">
+      <div className="container-fluid">
           <div className="d-flex justify-content-center container">
             <h4 className="title">Login</h4>
           </div>
-        </div>
         <form onSubmit={this.login} className='d-flex justify-content-center container p-3 ' >
           <div className="row gy-4 d-flex justify-content-center ">
 
@@ -66,7 +64,7 @@ class Login extends Component {
               </div>
               </div>
         </form>
-      </>
+      </div>
     ) : (
       <Navigate to="/products" /> // Updated from Redirect to Navigate
     );
