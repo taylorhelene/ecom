@@ -33,7 +33,7 @@ const Footer = props => {
                     <p>Contact Us</p>
                 </div>
                 <div className="col-sm-2">
-                    <h5 className="subtitle">About</h5>
+                    <h5 className="subtitle">NewsLetter</h5>
                 </div>
             </div>
 
