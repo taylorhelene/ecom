@@ -32,8 +32,8 @@ class Login extends Component {
   render() {
     return !this.props.context.user ? (
       <>
-        <div className="hero is-primary">
-          <div className="hero-body container">
+        <div className="container-fluid">
+          <div className="d-flex justify-content-center container">
             <h4 className="title">Login</h4>
           </div>
         </div>

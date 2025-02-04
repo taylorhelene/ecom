@@ -6,7 +6,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 const Footer = props => {
     return(
         <div className="container-fluid App">
-             <div className="row">
+             <div className="row justify-content-center">
                 <div className="col-sm-2">
                     <h5 className="subtitle">About</h5>
                     <div>
