@@ -6,11 +6,10 @@ const Cart = props => {
   const { cart } = props.context;
   const cartKeys = Object.keys(cart || {});
   return (
-    <>
-      <div className="hero is-primary">
-        <div className="hero-body container">
-          <h4 className="title">My Cart</h4>
-        </div>
+    <div className="container-fluid">
+      <div className="d-flex justify-content-center container">
+        <h4 className="title">Cart</h4>
+       
       </div>
       <br />
       <div className="container">
@@ -43,12 +42,12 @@ const Cart = props => {
             </div>
           </div>
         ) : (
-          <div className="column">
+          <div className="container">
             <div className="title has-text-grey-light">No item in cart!</div>
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
