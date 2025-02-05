@@ -27,7 +27,7 @@ const ProductItem = props => {
             )}
             <div className="is-clearfix">
               <button
-                className="button is-small is-outlined is-primary   is-pulled-right"
+                className="button rounded-pill"
                 onClick={() =>
                   props.addToCart({
                     id: product.name,
