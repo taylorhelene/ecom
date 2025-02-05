@@ -18,13 +18,13 @@ const Homepage = props => {
         </div>   
         <img  className="col-sm-5 hero-img " src={process.env.PUBLIC_URL + '/hero.png'}/>
       </div>
-      <div className="row about">
+      <div className="row about ">
         <DotLottieReact
           src="https://lottie.host/2a881668-7aa8-4bfe-a235-f68888a2bceb/dGmyFGxjSL.lottie"
           loop
           autoplay
-          className="col-sm-4 about-img object-fit-contain"
-        />
+          className="col-sm-4 about-img object-fit-contain"      
+                  />
         <div    className="col-sm " >
           <h2 className="subtitle">Our Services</h2>
           <p  className="body-text">There are many variations of passages of Lorem Ipsum available, 
