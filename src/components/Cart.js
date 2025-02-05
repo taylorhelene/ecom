@@ -14,7 +14,7 @@ const Cart = props => {
       <br />
       <div className="container">
         {cartKeys.length ? (
-          <div className="column columns is-multiline">
+          <div className="">
             {cartKeys.map(key => (
               <CartItem
                 cartKey={key}
@@ -28,12 +28,12 @@ const Cart = props => {
               <div className="is-pulled-right">
                 <button
                   onClick={props.context.clearCart}
-                  className="button is-warning "
+                  className="button rounded-pill "
                 >
                   Clear cart
                 </button>{" "}
                 <button
-                  className="button is-success"
+                  className="button rounded-pill"
                   onClick={props.context.checkout}
                 >
                   Checkout
