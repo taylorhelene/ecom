@@ -27,7 +27,9 @@ p{
   color: #333333;
 }
 footer{
-bottom:0;
+  bottom:0;
+  background-color: #FFC3A0;
+
 }
 .App {
   background-color: #FFC3A0;
