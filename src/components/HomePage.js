@@ -24,7 +24,7 @@ const Homepage = props => {
           loop
           autoplay
           className="col-sm-4 about-img object-fit-contain"      
-                  />
+          />
         <div    className="col-sm " >
           <h2 className="subtitle">Our Services</h2>
           <p  className="body-text">There are many variations of passages of Lorem Ipsum available, 

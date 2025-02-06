@@ -26,9 +26,12 @@ p{
   font-style: normal;
   color: #333333;
 }
-
+footer{
+bottom:0;
+}
 .App {
   background-color: #FFC3A0;
+  min-height: 50vh; 
 }
 
 .App-logo {
