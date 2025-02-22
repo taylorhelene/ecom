@@ -20,7 +20,7 @@ const Homepage = props => {
       </div>
       <div className="row about ">
         <DotLottieReact
-          src="https://lottie.host/2a881668-7aa8-4bfe-a235-f68888a2bceb/dGmyFGxjSL.lottie"
+          src={process.env.PUBLIC_URL + '/cake.lottie'}
           loop
           autoplay
           className="col-sm-4 about-img object-fit-contain"      
