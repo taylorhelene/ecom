@@ -11,8 +11,8 @@ const Homepage = props => {
         <div className="col-sm-6 ">
           <h1 className="title ">Our Sweet Treats are Handcrafted with Love</h1>
           <h4 className="subtitle">Customize Your Cake and Indulge in Flavors. You can get freshly baked 
-            sweer treats that are moist and warm with flavour fillings. Visit our location to try out the flavours
-            first before order
+            sweet treats that are moist and warm with flavour fillings. Visit our location to try out the flavours
+            first before order.
           </h4>
           <button className="button rounded-pill" type="button">View our products</button>
         </div>   
@@ -27,10 +27,10 @@ const Homepage = props => {
           />
         <div    className="col-sm " >
           <h2 className="subtitle">Our Services</h2>
-          <p  className="body-text">There are many variations of passages of Lorem Ipsum available, 
-            but the majority have sufferedThere are many variations of passages of Lorem Ipsum available, but 
-            the majority have sufferedThere are many variations of passages of Lorem Ipsum available, but the
-             majority have suffered</p>
+          <p  className="body-text">We make the most incredible treats depending on our cutomers orders, 
+            our delights are a mixture of the best flavours and most of the ingredients are natural .
+            We let out customers choose from the various pictures that are availbale and they can taste the
+            products in order to purchase the products that they are delighted with. </p>
 
           <button className="button rounded-pill" type="button">Read More</button>
         </div>
