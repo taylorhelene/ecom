@@ -3,7 +3,7 @@ import React from "react";
 const ProductItem = props => {
   const { product } = props;
   return (
-    <div className=" column is-half">
+    <div className=" column">
       <div className="box">
         <div className="media">
           <div className="media-left">
