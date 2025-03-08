@@ -128,7 +128,7 @@ export default class App extends Component {
         p.stock = p.stock - cart[p.name].amount;
   
         axios.put(
-          `http://localhost:3001/products/${p.id}`,
+          `http://localhost:3002/products/${p.id}`,
           { ...p },
         )
       }
