@@ -13,6 +13,7 @@ import {jwtDecode} from 'jwt-decode';
 import HomePage from "./components/HomePage";
 import ContactUs from "./components/ContactUs";
 import Footer from "./components/SharedUtils/Footer";
+import Register from "./components/Register";
 
 export default class App extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ export default class App extends Component {
     let user = localStorage.getItem("user");
     let cart = localStorage.getItem("cart");
   
-    const products = await axios.get('http://localhost:3001/products');
+    const products = await axios.get('http://localhost:3002/products');
     user = user ? JSON.parse(user) : null;
     cart = cart? JSON.parse(cart) : {};
   
@@ -147,6 +148,7 @@ export default class App extends Component {
           removeFromCart: this.removeFromCart,
           addToCart: this.addToCart,
           login: this.login,
+          register: this.register,
           addProduct: this.addProduct,
           clearCart: this.clearCart,
           checkout: this.checkout
@@ -247,7 +249,8 @@ export default class App extends Component {
               </div>
 
               {!this.state.user ? (
-                    <button className="position-absolute top-0 end-0 d-flex navbar-item rounded-pill">
+                    <div  className="position-absolute top-0 end-0 d-flex">
+                      <button className="navbar-item rounded-pill text-nowrap p-2 m-1" type='button'>
                       <NavLink
                         to="/login"
                         className={({ isActive }) =>
@@ -257,6 +260,19 @@ export default class App extends Component {
                         Log in
                       </NavLink>
                     </button>
+
+                    <button className="navbar-item rounded-pill p-2 m-1" style={{ right: '100px' }}>
+                    <NavLink
+                      to="/register"
+                      className={({ isActive }) =>
+                        `nav-link ${isActive ? 'active' : ''}`
+                      }
+                    >
+                      Register
+                    </NavLink>
+                    </button>
+                    </div>
+                    
                   ) : (
                     <button className="position-absolute top-0 end-0 d-flex navbar-item rounded-pill">
                       <NavLink
@@ -276,6 +292,7 @@ export default class App extends Component {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/add-product" element={<AddProduct />} />
               <Route path="/products" element={<ProductList />} />
