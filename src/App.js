@@ -60,6 +60,21 @@ export default class App extends Component {
       return false;
     }
   }
+
+  register = async (email, password) => {
+    const res = await axios.post(
+      'http://localhost:3001/register',
+      { email, password },
+    ).catch((res) => {
+      return { status: 400, message: 'Registration failed' }
+    });
+
+    if(res.status === 201) {
+      return this.login(email, password);
+    } else {
+      return false;
+    }
+  };
   
   logout = e => {
     e.preventDefault();
