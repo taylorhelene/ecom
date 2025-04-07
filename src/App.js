@@ -177,7 +177,7 @@ export default class App extends Component {
           CheckoutRequestID: checkoutId
         });
 
-        if (response.status === 200 && response.data.ResultCode === '0') {
+        if (response.status === 200 && response.data.ResultDesc === 'The service request is processed successfully.') {
           // Payment successful, send receipt
           await axios.post('http://localhost:3001/send-receipt', {
             email: receiptData.email,
