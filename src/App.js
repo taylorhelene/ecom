@@ -116,29 +116,95 @@ export default class App extends Component {
     this.setState({ cart });
   };
 
-  checkout = () => {
+  
+  checkout = async () => {
     if (!this.state.user) {
       this.routerRef.current.history.push("/login");
       return;
     }
-  
+
     const cart = this.state.cart;
-  
-    const products = this.state.products.map(p => {
-      if (cart[p.name]) {
-        p.stock = p.stock - cart[p.name].amount;
-  
-        axios.put(
-          `http://localhost:3002/products/${p.id}`,
-          { ...p },
-        )
+    // Calculate total cost
+    const totalCost = Object.values(cart).reduce((sum, item) => 
+      sum + (item.amount * item.product.price), 0);
+    
+    try {
+      // Get phone number from user (you might want to add this to user state or get it from a form)
+      const phoneNumber = this.state.user.phone || prompt("Enter your phone number (e.g., 2547XXXXXXXX):");
+      
+      // Send payment request
+      const paymentResponse = await axios.post('http://localhost:3001/payment', {
+        amount: totalCost,
+        number: phoneNumber,
+        Order_ID: Date.now().toString() // Simple order ID generation
+      });
+
+      if (paymentResponse.data.CheckoutRequestID) {
+        // Update products stock
+        const products = this.state.products.map(p => {
+          if (cart[p.name]) {
+            p.stock = p.stock - cart[p.name].amount;
+            axios.put(`http://localhost:3002/products/${p.id}`, { ...p });
+          }
+          return p;
+        });
+
+        // Send receipt after successful payment verification
+        this.verifyAndSendReceipt(paymentResponse.data.CheckoutRequestID, {
+          email: this.state.user.email,
+          totalCost,
+          cartItems: Object.values(cart),
+          orderId: paymentResponse.data.Order_ID
+        });
+
+        this.setState({ products });
+        this.clearCart();
       }
-      return p;
-    });
-  
-    this.setState({ products });
-    this.clearCart();
+    } catch (error) {
+      console.error('Payment error:', error);
+      alert('Payment processing failed. Please try again.');
+    }
   };
+
+  verifyAndSendReceipt = async (checkoutId, receiptData) => {
+    let attempts = 0;
+    const maxAttempts = 10;
+    const interval = 1000; // 1 second
+
+    const checkPayment = async () => {
+      try {
+        const response = await axios.post('http://localhost:3001/payment-callback/', {
+          CheckoutRequestID: checkoutId
+        });
+
+        if (response.status === 200 && response.data.ResultCode === '0') {
+          // Payment successful, send receipt
+          await axios.post('http://localhost:3001/send-receipt', {
+            email: receiptData.email,
+            checkoutId: checkoutId,
+            totalCost: receiptData.totalCost,
+            cartItems: receiptData.cartItems,
+            orderId: receiptData.orderId
+          });
+          alert('Payment successful! Receipt sent to your email.');
+          return true;
+        }
+      } catch (error) {
+        console.error('Verification error:', error);
+      }
+
+      attempts++;
+      if (attempts < maxAttempts) {
+        setTimeout(checkPayment, interval);
+      } else {
+        alert('Payment verification timed out. Please check your payment status.');
+      }
+      return false;
+    };
+
+    return checkPayment();
+  }; 
+
 
   render() {
     return (
