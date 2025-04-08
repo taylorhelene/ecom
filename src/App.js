@@ -22,7 +22,9 @@ export default class App extends Component {
       user: null,
       cart: {},
       products: [],
-      showMenu: false
+      showMenu: false,
+      showPhoneModal: false, 
+      phoneNumberInput: ''   
     };
     this.routerRef = React.createRef();
   }
@@ -127,11 +129,17 @@ export default class App extends Component {
     // Calculate total cost
     const totalCost = Object.values(cart).reduce((sum, item) => 
       sum + (item.amount * item.product.price), 0);
-    
+    console.log(totalCost)
+
+    // Show modal if no phone number in user state
+    if (!this.state.phoneNumberInput) {
+      this.setState({ showPhoneModal: true });
+      return;
+    }
+
     try {
       // Get phone number from user (you might want to add this to user state or get it from a form)
-      const phoneNumber = this.state.user.phone || prompt("Enter your phone number (e.g., 2547XXXXXXXX):");
-      
+      const phoneNumber = this.state.phoneNumberInput;      
       // Send payment request
       const paymentResponse = await axios.post('http://localhost:3001/payment', {
         amount: totalCost,
@@ -139,27 +147,45 @@ export default class App extends Component {
         Order_ID: Date.now().toString() // Simple order ID generation
       });
 
-      if (paymentResponse.data.CheckoutRequestID) {
-        // Update products stock
-        const products = this.state.products.map(p => {
-          if (cart[p.name]) {
-            p.stock = p.stock - cart[p.name].amount;
-            axios.put(`http://localhost:3002/products/${p.id}`, { ...p });
+      // Function to check payment and proceed with verification
+    const checkPaymentAndProceed = () => {
+      return new Promise((resolve) => {
+        let attempts = 0;
+        const maxAttempts = 5;
+        const interval = 10000; // 10 seconds
+
+        const checkResponse = () => {
+          if (paymentResponse.data.CheckoutRequestID) {
+
+            // Send receipt after successful payment verification
+            this.verifyAndSendReceipt(paymentResponse.data.CheckoutRequestID, {
+              email: this.state.user.email,
+              totalCost,
+              cartItems: Object.values(cart),
+              orderId: paymentResponse.data.Order_ID
+            });
+
+               resolve(true);
+          } else {
+            attempts++;
+            if (attempts < maxAttempts) {
+              setTimeout(checkResponse, interval);
+            } else {
+              resolve(false);
+            }
           }
-          return p;
-        });
+        };
 
-        // Send receipt after successful payment verification
-        this.verifyAndSendReceipt(paymentResponse.data.CheckoutRequestID, {
-          email: this.state.user.email,
-          totalCost,
-          cartItems: Object.values(cart),
-          orderId: paymentResponse.data.Order_ID
-        });
+        // Start checking immediately
+        checkResponse();
+      });
+    };
 
-        this.setState({ products });
-        this.clearCart();
-      }
+    // Wait for payment verification with timeout
+    const paymentVerified = await checkPaymentAndProceed();
+    if (!paymentVerified) {
+      throw new Error('Payment verification timed out after 30 seconds');
+    }
     } catch (error) {
       console.error('Payment error:', error);
       alert('Payment processing failed. Please try again.');
@@ -186,6 +212,20 @@ export default class App extends Component {
             cartItems: receiptData.cartItems,
             orderId: receiptData.orderId
           });
+
+          // Update products stock
+          const cart = this.state.cart;
+
+        const products = this.state.products.map(p => {
+          if (cart[p.name]) {
+            p.stock = p.stock - cart[p.name].amount;
+            axios.put(`http://localhost:3002/products/${p.id}`, { ...p });
+          }
+          return p;
+        });
+        this.setState({ products });
+        this.clearCart();
+        
           alert('Payment successful! Receipt sent to your email.');
           return true;
         }
@@ -203,7 +243,26 @@ export default class App extends Component {
     };
 
     return checkPayment();
-  }; 
+  };
+
+  // Add these methods to handle modal interactions
+handlePhoneSubmit = () => {
+  if (this.state.phoneNumberInput.match(/^\+?2547\d{8}$/)) {
+    this.setState(prevState => ({
+      showPhoneModal: false,
+    }), () => this.checkout()); // Continue checkout after valid input
+  } else {
+    alert('Please enter a valid Kenyan phone number (e.g., 2547XXXXXXXX)');
+  }
+};
+
+handlePhoneInputChange = (e) => {
+  this.setState({ phoneNumberInput: e.target.value });
+};
+
+handleCloseModal = () => {
+  this.setState({ showPhoneModal: false });
+};
 
 
   render() {
@@ -222,6 +281,53 @@ export default class App extends Component {
       >
         <Router ref={this.routerRef}>
         <div className="App p-2">
+          {/* Modal for phone number input */}
+          {this.state.showPhoneModal && (
+            <div className="container">
+              <div className="modal-background" onClick={this.handleCloseModal}></div>
+              <div className="modal-content">
+                <div className="box">
+                  <h3 className="title is-4">Enter Phone Number</h3>
+                  <p>Please provide your phone number for payment processing</p>
+                  <div className="field">
+                    <label className="label">Phone Number (e.g., 2547XXXXXXXX)</label>
+                    <div className="control">
+                      <input
+                        className="input"
+                        type="tel"
+                        value={this.state.phoneNumberInput}
+                        onChange={this.handlePhoneInputChange}
+                        placeholder="2547XXXXXXXX"
+                      />
+                    </div>
+                  </div>
+                  <div className="field is-grouped">
+                  <div className="control">
+                      <button 
+                        className="button is-primary" 
+                        onClick={this.handlePhoneSubmit}
+                      >
+                        Submit
+                      </button>
+                    </div>
+                    <div className="control">
+                      <button 
+                        className="button is-light" 
+                        onClick={this.handleCloseModal}
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button 
+                className="modal-close is-large" 
+                aria-label="close"
+                onClick={this.handleCloseModal}
+              ></button>
+            </div>
+          )}
           <nav
             className="navbar navbar-expand-lg position-relative container-fluid rounded p-2 m-2"
             role="navigation"
