@@ -118,7 +118,16 @@ export default class App extends Component {
     this.setState({ cart });
   };
 
-  
+  contact = async (contactData) => {
+    try {
+      const response = await axios.post('http://localhost:3001/contact', contactData);
+      return response.data;
+    } catch (error) {
+      console.error('Contact form submission error:', error);
+      throw error;
+    }
+  };
+
   checkout = async () => {
     if (!this.state.user) {
       this.routerRef.current.history.push("/login");
@@ -276,7 +285,8 @@ handleCloseModal = () => {
           register: this.register,
           addProduct: this.addProduct,
           clearCart: this.clearCart,
-          checkout: this.checkout
+          checkout: this.checkout,
+          contact: this.contact
         }}
       >
         <Router ref={this.routerRef}>
