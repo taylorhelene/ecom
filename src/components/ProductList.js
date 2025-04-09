@@ -7,23 +7,24 @@ const ProductList = props => {
 
   return (
     <div className="container-fluid">
-        <div className="d-flex justify-content-center container">
-          <h4 className="title">Our Products</h4>
-        </div>
-      <br />
+      <div className="d-flex justify-content-center container">
+        <h4 className="title">Our Products</h4>
+      </div>
+      
       <div className="container">
-        <div className="column columns is-multiline">
+        <div className="row row-cols-1 row-cols-md-3 g-4">
           {products && products.length ? (
             products.map((product, index) => (
-              <ProductItem
-                product={product}
-                key={index}
-                addToCart={props.context.addToCart}
-              />
+              <div className="col" key={index}>
+                <ProductItem
+                  product={product}
+                  addToCart={props.context.addToCart}
+                />
+              </div>
             ))
           ) : (
-            <div className="column">
-              <span className="title has-text-grey-light">
+            <div className="col">
+              <span className="text-muted display-6">
                 No products found!
               </span>
             </div>

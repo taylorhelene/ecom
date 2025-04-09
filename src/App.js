@@ -293,49 +293,52 @@ handleCloseModal = () => {
         <div className="App p-2">
           {/* Modal for phone number input */}
           {this.state.showPhoneModal && (
-            <div className="container">
-              <div className="modal-background" onClick={this.handleCloseModal}></div>
-              <div className="modal-content">
-                <div className="box">
-                  <h3 className="title is-4">Enter Phone Number</h3>
-                  <p>Please provide your phone number for payment processing</p>
-                  <div className="field">
-                    <label className="label">Phone Number (e.g., 2547XXXXXXXX)</label>
-                    <div className="control">
+            <div className="modal fade show d-block" tabIndex="-1" role="dialog" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
+              <div className="modal-dialog modal-dialog-centered" role="document">
+                <div className="modal-content shadow-lg" style={{ elevation: '10' }}>
+                  <div className="modal-header">
+                    <h5 className="modal-title">Enter Phone Number</h5>
+                    <button 
+                      type="button" 
+                      className="btn-close" 
+                      aria-label="Close"
+                      onClick={this.handleCloseModal}
+                    ></button>
+                  </div>
+                  <div className="modal-body">
+                    <p>Please provide your phone number for payment processing</p>
+                    <div className="mb-3">
+                      <label htmlFor="phoneInput" className="form-label">
+                        Phone Number (e.g., 2547XXXXXXXX)
+                      </label>
                       <input
-                        className="input"
                         type="tel"
+                        className="form-control"
+                        id="phoneInput"
                         value={this.state.phoneNumberInput}
                         onChange={this.handlePhoneInputChange}
                         placeholder="2547XXXXXXXX"
                       />
                     </div>
                   </div>
-                  <div className="field is-grouped">
-                  <div className="control">
-                      <button 
-                        className="button is-primary" 
-                        onClick={this.handlePhoneSubmit}
-                      >
-                        Submit
-                      </button>
-                    </div>
-                    <div className="control">
-                      <button 
-                        className="button is-light" 
-                        onClick={this.handleCloseModal}
-                      >
-                        Cancel
-                      </button>
-                    </div>
+                  <div className="modal-footer">
+                    <button 
+                      type="button" 
+                      className="rounded-pill bg-secondary p-2" 
+                      onClick={this.handleCloseModal}
+                    >
+                      Cancel
+                    </button>
+                    <button 
+                      type="button" 
+                      className="rounded-pill p-2" 
+                      onClick={this.handlePhoneSubmit}
+                    >
+                      Submit
+                    </button>
                   </div>
                 </div>
               </div>
-              <button 
-                className="modal-close is-large" 
-                aria-label="close"
-                onClick={this.handleCloseModal}
-              ></button>
             </div>
           )}
           <nav
