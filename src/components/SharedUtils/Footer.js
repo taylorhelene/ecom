@@ -1,6 +1,5 @@
 import React from "react";
 import withContext from "../../withContext";
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 
 const Footer = props => {
