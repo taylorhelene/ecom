@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import withContext from "../withContext";
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const ContactUs = props => {
   const { contact } = props.context;  
