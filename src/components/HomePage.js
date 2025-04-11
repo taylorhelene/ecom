@@ -1,12 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router";
 import withContext from "../withContext";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { NavLink } from "react-router-dom";
 
 
 const Homepage = props => {
-  let navigate = useNavigate();
-
   return (
     <div className="home p-2">
       <div className="hero row d-flex align-items-center text-wrap ">
@@ -16,8 +14,10 @@ const Homepage = props => {
             sweet treats that are moist and warm with flavour fillings. Visit our location to try out the flavours
             first before order.
           </h4>
-          <button className="button rounded-pill" type="button" onClick={() => { navigate('/products');}}>
+          <button className="button rounded-pill" type="button" >
+            <NavLink to="/products">
             View our products
+            </NavLink>
           </button>
         </div>   
         <img  className="col-sm-5 hero-img " src={process.env.PUBLIC_URL + '/hero.png'}/>

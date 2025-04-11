@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Routes, Route, Link, BrowserRouter as Router, NavLink } from "react-router-dom";
+import { Routes, Route, BrowserRouter as Router, NavLink } from "react-router-dom";
 
 import AddProduct from './components/AddProduct';
 import Cart from './components/Cart';
@@ -29,6 +29,7 @@ export default class App extends Component {
     this.routerRef = React.createRef();
   }
 
+ 
   async componentDidMount() {
     let user = localStorage.getItem("user");
     let cart = localStorage.getItem("cart");
@@ -286,7 +287,7 @@ handleCloseModal = () => {
           addProduct: this.addProduct,
           clearCart: this.clearCart,
           checkout: this.checkout,
-          contact: this.contact
+          contact: this.contact,
         }}
       >
         <Router ref={this.routerRef}>
@@ -484,8 +485,9 @@ handleCloseModal = () => {
               <Route path="/contact" element={<ContactUs />} />
             </Routes>
           </div>
+          <Footer/>
         </Router>
-        <Footer/>
+        
       </Context.Provider>
     );
   }

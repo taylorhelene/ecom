@@ -1,8 +1,10 @@
 import React from "react";
 import withContext from "../../withContext";
+import { NavLink } from "react-router-dom";
 
 
 const Footer = props => {
+    
     return(
         <footer className="container-fluid ">
              <div className="row justify-content-center">
@@ -26,10 +28,10 @@ const Footer = props => {
                 </div>
                 <div className="col-sm-2">
                     <h5 className="subtitle">Links</h5>
-                    <p>Home</p>
-                    <p>Products</p>
-                    <p>Cart</p>
-                    <p>Contact Us</p>
+                    <p > <NavLink to="/"> Home </NavLink></p>
+                    <p > <NavLink to="/products"> Products </NavLink></p>
+                    <p > <NavLink to="/cart"> Cart </NavLink></p>
+                    <p >  <NavLink to="/contact"> Contact Us</NavLink></p>
                 </div>
                 <div className="col-sm-2">
                     <h5 className="subtitle">NewsLetter</h5>
