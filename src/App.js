@@ -34,7 +34,7 @@ export default class App extends Component {
     let user = localStorage.getItem("user");
     let cart = localStorage.getItem("cart");
   
-    const products = await axios.get('http://localhost:3002/products');
+    const products = await axios.get('http://localhost:3001/products');
     user = user ? JSON.parse(user) : null;
     cart = cart? JSON.parse(cart) : {};
   
@@ -229,7 +229,7 @@ export default class App extends Component {
         const products = this.state.products.map(p => {
           if (cart[p.name]) {
             p.stock = p.stock - cart[p.name].amount;
-            axios.put(`http://localhost:3002/products/${p.id}`, { ...p });
+            axios.put(`http://localhost:3001/products/${p.id}`, { ...p });
           }
           return p;
         });
